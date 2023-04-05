@@ -22,7 +22,7 @@ def num_of_pages(jop_title):
   return num_pages
 
 # function for scraping
-def scrape_pages(jop_title):
+def scrape_pages(job_title):
   number_of_pages = num_of_pages(jop_title)
   all_titles, all_links, all_locations, type_of_job= [], [], [], []
   for page in range(number_of_pages):
@@ -49,11 +49,5 @@ def scrape_pages(jop_title):
   return df 
 
 
-scrape_pages('machine learning')
 
-lst_of_job_title = input().split(',')
-df_all = pd.DataFrame()
-for job in lst_of_job_title:
-  df = scrape_pages(job)
-  df_all = pd.concat([df_all, df], axis = 0)
-df_all.to_csv('job', index = False)
+  
